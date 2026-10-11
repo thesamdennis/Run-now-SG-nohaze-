@@ -1,0 +1,432 @@
+{
+  "_readme": [
+    "Starter catalogue of 5K-only routes for SG Haze Run.",
+    "Every route must be exactly 5.0 km (+/-0.1) and finish where it starts.",
+    "start.lat/lng are APPROXIMATE. Confirm them when drawing the route (gpx.studio / plotaroute).",
+    "provisionalRegion is a human guess only. The app should assign each route to the NEA region whose regionMetadata label_location is nearest to start.",
+    "path: fill with [lng, lat] pairs (GeoJSON order) once the route is drawn. Set status to 'verified' once someone has run it.",
+    "water / toilets / litAtNight: fill with true/false once verified."
+  ],
+  "routes": [
+    {
+      "id": "east-coast-park-bedok-jetty",
+      "name": "East Coast Park – Bedok Jetty",
+      "distanceKm": 5.0,
+      "format": "out-and-back",
+      "provisionalRegion": "east",
+      "start": {
+        "name": "East Coast Park Marine Cove",
+        "lat": 1.3022,
+        "lng": 103.9123
+      },
+      "nearestMrt": "Marine Parade (TEL)",
+      "howToRun": "Run east along the park connector toward Bedok Jetty, turn at 2.5 km, return.",
+      "shade": "low",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Flat, sea breeze, plenty of toilets and water points. Busy at weekends.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "bedok-reservoir-loop",
+      "name": "Bedok Reservoir Loop+",
+      "distanceKm": 5.0,
+      "format": "loop",
+      "provisionalRegion": "east",
+      "start": {
+        "name": "Bedok Reservoir Park (Bedok North Rd entrance)",
+        "lat": 1.3405,
+        "lng": 103.9327
+      },
+      "nearestMrt": "Bedok Reservoir (DTL)",
+      "howToRun": "One full reservoir loop (~4.3 km) plus a short out-and-back extension to make 5.0 km.",
+      "shade": "medium",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Popular, well-lit, gentle undulation.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "pasir-ris-park",
+      "name": "Pasir Ris Park Coastal",
+      "distanceKm": 5.0,
+      "format": "loop",
+      "provisionalRegion": "east",
+      "start": {
+        "name": "Pasir Ris Park (Car Park C)",
+        "lat": 1.3813,
+        "lng": 103.9513
+      },
+      "nearestMrt": "Pasir Ris (EWL)",
+      "howToRun": "Loop along the beach path and mangrove boardwalk edge.",
+      "shade": "medium",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Flat, shaded sections, toilets along the beach.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "changi-beach-park",
+      "name": "Changi Beach Park",
+      "distanceKm": 5.0,
+      "format": "out-and-back",
+      "provisionalRegion": "east",
+      "start": {
+        "name": "Changi Village",
+        "lat": 1.3907,
+        "lng": 103.9925
+      },
+      "nearestMrt": "Tanah Merah (EWL) + bus",
+      "howToRun": "Head west along the beach path from Changi Village, turn at 2.5 km.",
+      "shade": "low",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Quiet and flat, good for sunrise runs. Less MRT-friendly.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "punggol-waterway",
+      "name": "Punggol Waterway Park",
+      "distanceKm": 5.0,
+      "format": "out-and-back",
+      "provisionalRegion": "east",
+      "start": {
+        "name": "Punggol Waterway Park (Sentul Crescent)",
+        "lat": 1.4063,
+        "lng": 103.9077
+      },
+      "nearestMrt": "Punggol (NEL)",
+      "howToRun": "Follow the waterway path, turn at 2.5 km.",
+      "shade": "medium",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Flat, scenic, well-lit. Region decided automatically (often reported under North/East).",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "sengkang-riverside",
+      "name": "Sengkang Riverside Park",
+      "distanceKm": 5.0,
+      "format": "loop",
+      "provisionalRegion": "east",
+      "start": {
+        "name": "Sengkang Riverside Park (Anchorvale St)",
+        "lat": 1.3952,
+        "lng": 103.893
+      },
+      "nearestMrt": "Farmway (Sengkang LRT)",
+      "howToRun": "Loop the riverside park and Sungei Punggol path.",
+      "shade": "medium",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Flat, includes the Fruit Tree boardwalk area.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "marina-bay-loop",
+      "name": "Marina Bay Loop",
+      "distanceKm": 5.0,
+      "format": "loop",
+      "provisionalRegion": "central",
+      "start": {
+        "name": "Merlion Park",
+        "lat": 1.2868,
+        "lng": 103.8545
+      },
+      "nearestMrt": "Raffles Place (EWL/NSL)",
+      "howToRun": "Merlion → Esplanade → Helix Bridge → Marina Bay Sands promenade → back via Bayfront, extend toward Gardens by the Bay to reach 5.0 km.",
+      "shade": "low",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Iconic and well-lit. Crowded in the evening.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "kallang-basin",
+      "name": "Kallang Basin & Sports Hub",
+      "distanceKm": 5.0,
+      "format": "loop",
+      "provisionalRegion": "central",
+      "start": {
+        "name": "Stadium MRT",
+        "lat": 1.3028,
+        "lng": 103.8753
+      },
+      "nearestMrt": "Stadium (CCL)",
+      "howToRun": "Loop around the Kallang Basin via the Sports Hub, Kallang Riverside Park and Tanjong Rhu.",
+      "shade": "low",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Flat waterfront, good night lighting.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "bishan-amk-park",
+      "name": "Bishan–Ang Mo Kio Park",
+      "distanceKm": 5.0,
+      "format": "loop",
+      "provisionalRegion": "central",
+      "start": {
+        "name": "Bishan-AMK Park (Car Park A)",
+        "lat": 1.3627,
+        "lng": 103.8432
+      },
+      "nearestMrt": "Bishan (NSL/CCL)",
+      "howToRun": "Loop the park along the naturalised Kallang River plus one extension to reach 5.0 km.",
+      "shade": "medium",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Flat, green, popular with families. Toilets and water in the park.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "botanic-gardens",
+      "name": "Singapore Botanic Gardens",
+      "distanceKm": 5.0,
+      "format": "loop",
+      "provisionalRegion": "central",
+      "start": {
+        "name": "Botanic Gardens MRT (Bukit Timah Gate)",
+        "lat": 1.3226,
+        "lng": 103.8152
+      },
+      "nearestMrt": "Botanic Gardens (CCL/DTL)",
+      "howToRun": "Run from Bukit Timah Gate to Tanglin Gate and back via the Eco-Lake loop, repeating sections to reach 5.0 km.",
+      "shade": "high",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Shaded and rolling. Opens 5am.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "gardens-by-the-bay-barrage",
+      "name": "Gardens by the Bay East & Marina Barrage",
+      "distanceKm": 5.0,
+      "format": "out-and-back",
+      "provisionalRegion": "south",
+      "start": {
+        "name": "Marina Barrage",
+        "lat": 1.2805,
+        "lng": 103.8711
+      },
+      "nearestMrt": "Gardens by the Bay (TEL)",
+      "howToRun": "Marina Barrage → Gardens by the Bay East waterfront → turn at 2.5 km.",
+      "shade": "low",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Flat with skyline views, windy and exposed.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "labrador-park",
+      "name": "Labrador Park & Berlayer Creek",
+      "distanceKm": 5.0,
+      "format": "out-and-back",
+      "provisionalRegion": "south",
+      "start": {
+        "name": "Labrador Park MRT",
+        "lat": 1.2721,
+        "lng": 103.8025
+      },
+      "nearestMrt": "Labrador Park (CCL)",
+      "howToRun": "Berlayer Creek boardwalk → Labrador Nature Reserve coastal path, extend toward Keppel Bay to reach 5.0 km.",
+      "shade": "high",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Shaded, some gentle hills.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "sentosa-boardwalk",
+      "name": "Sentosa Boardwalk & Beaches",
+      "distanceKm": 5.0,
+      "format": "out-and-back",
+      "provisionalRegion": "south",
+      "start": {
+        "name": "VivoCity (Sentosa Boardwalk start)",
+        "lat": 1.2643,
+        "lng": 103.8222
+      },
+      "nearestMrt": "HarbourFront (NEL/CCL)",
+      "howToRun": "Cross the Sentosa Boardwalk, continue along Siloso/Palawan beach path, turn at 2.5 km.",
+      "shade": "low",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Flat beach running. Can be touristy in the daytime.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "jurong-lake-gardens",
+      "name": "Jurong Lake Gardens Loop",
+      "distanceKm": 5.0,
+      "format": "loop",
+      "provisionalRegion": "west",
+      "start": {
+        "name": "Chinese Garden MRT",
+        "lat": 1.3423,
+        "lng": 103.7326
+      },
+      "nearestMrt": "Chinese Garden (EWL)",
+      "howToRun": "Loop around Jurong Lake via Lakeside Garden and the Chinese/Japanese Gardens, adjusted to 5.0 km.",
+      "shade": "medium",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Flat, scenic, toilets and water in Lakeside Garden.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "west-coast-park",
+      "name": "West Coast Park",
+      "distanceKm": 5.0,
+      "format": "out-and-back",
+      "provisionalRegion": "west",
+      "start": {
+        "name": "West Coast Park (Car Park 3)",
+        "lat": 1.2963,
+        "lng": 103.765
+      },
+      "nearestMrt": "Haw Par Villa (CCL) + bus",
+      "howToRun": "Coastal path through the park, turn at 2.5 km.",
+      "shade": "medium",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Flat, quieter than East Coast.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "rail-corridor-hillview",
+      "name": "Rail Corridor (Hillview)",
+      "distanceKm": 5.0,
+      "format": "out-and-back",
+      "provisionalRegion": "west",
+      "start": {
+        "name": "Hillview MRT",
+        "lat": 1.3623,
+        "lng": 103.7672
+      },
+      "nearestMrt": "Hillview (DTL)",
+      "howToRun": "Join the Rail Corridor and run south toward the old Bukit Timah Railway Station, turn at 2.5 km.",
+      "shade": "high",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Shaded green corridor. Mostly compacted gravel. Not lit at night.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "woodlands-waterfront",
+      "name": "Woodlands Waterfront Park",
+      "distanceKm": 5.0,
+      "format": "out-and-back",
+      "provisionalRegion": "north",
+      "start": {
+        "name": "Woodlands Waterfront Park",
+        "lat": 1.4521,
+        "lng": 103.7795
+      },
+      "nearestMrt": "Woodlands North (TEL)",
+      "howToRun": "Waterfront promenade and jetty, then along the coastal PCN, turn at 2.5 km.",
+      "shade": "low",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Flat, views of Johor. Note: closest region to transboundary haze.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "admiralty-park",
+      "name": "Admiralty Park & Woodlands PCN",
+      "distanceKm": 5.0,
+      "format": "loop",
+      "provisionalRegion": "north",
+      "start": {
+        "name": "Admiralty Park (Riverside Rd)",
+        "lat": 1.443,
+        "lng": 103.7812
+      },
+      "nearestMrt": "Woodlands (NSL/TEL)",
+      "howToRun": "Loop Admiralty Park and connect to the Woodlands PCN to reach 5.0 km.",
+      "shade": "medium",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Green with some boardwalks.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "lower-seletar",
+      "name": "Lower Seletar Reservoir Park",
+      "distanceKm": 5.0,
+      "format": "out-and-back",
+      "provisionalRegion": "north",
+      "start": {
+        "name": "Lower Seletar Reservoir Park (Yishun Ave 1)",
+        "lat": 1.4061,
+        "lng": 103.8384
+      },
+      "nearestMrt": "Khatib (NSL)",
+      "howToRun": "Reservoir-side path, turn at 2.5 km.",
+      "shade": "medium",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Flat and quiet, good sunset spot.",
+      "status": "draft",
+      "path": []
+    },
+    {
+      "id": "sembawang-park",
+      "name": "Sembawang Park & PCN",
+      "distanceKm": 5.0,
+      "format": "out-and-back",
+      "provisionalRegion": "north",
+      "start": {
+        "name": "Sembawang Park",
+        "lat": 1.461,
+        "lng": 103.8364
+      },
+      "nearestMrt": "Sembawang (NSL) + bus",
+      "howToRun": "Through Sembawang Park and along the Sembawang PCN, turn at 2.5 km.",
+      "shade": "medium",
+      "water": null,
+      "toilets": null,
+      "litAtNight": null,
+      "notes": "Quiet coastal park with a beach.",
+      "status": "draft",
+      "path": []
+    }
+  ]
+}
