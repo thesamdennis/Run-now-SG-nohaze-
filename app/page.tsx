@@ -1,22 +1,11 @@
-import routeData from "@/data/routes-5k.json";
+import Link from "next/link";
 import { getConditions, type Conditions } from "@/lib/nea";
-import { nearestRegion, rankRegions, regionVerdict, type Region, type Verdict } from "@/lib/verdict";
+import { getRoutes } from "@/lib/routes";
+import { rankRegions, regionVerdict, type Region } from "@/lib/verdict";
+import { formatTime, SHADE_LABEL, VERDICT_STYLE } from "./verdict-style";
 
 // Re-check NEA at most every 5 minutes.
 export const revalidate = 300;
-
-const VERDICT_STYLE: Record<Verdict, { label: string; dot: string; text: string; bg: string }> = {
-  GO: { label: "GO", dot: "bg-green-500", text: "text-green-700", bg: "bg-green-50 ring-green-200" },
-  GO_EASY: { label: "GO EASY", dot: "bg-amber-400", text: "text-amber-700", bg: "bg-amber-50 ring-amber-200" },
-  SKIP: { label: "SKIP", dot: "bg-red-500", text: "text-red-700", bg: "bg-red-50 ring-red-200" },
-};
-
-function formatTime(iso: string | null) {
-  if (!iso) return null;
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return null;
-  return d.toLocaleTimeString("en-SG", { hour: "numeric", minute: "2-digit", timeZone: "Asia/Singapore" });
-}
 
 export default async function Home() {
   let conditions: Conditions | null = null;
@@ -31,10 +20,7 @@ export default async function Home() {
   const allSkip = ranked.length > 0 && ranked.every((r) => r.verdict === "SKIP");
   const updated = formatTime(conditions?.updatedAt ?? null);
 
-  const routes = routeData.routes.map((r) => ({
-    ...r,
-    region: (conditions && nearestRegion(r.start, conditions.centres)) || (r.provisionalRegion as Region),
-  }));
+  const routes = getRoutes(conditions);
   const regionOrder = ranked.length > 0 ? ranked.map((r) => r.region) : (["east", "central", "south", "west", "north"] as Region[]);
 
   return (
@@ -107,11 +93,21 @@ export default async function Home() {
                 </h3>
                 <ul className="mt-1 space-y-1">
                   {inRegion.map((r) => (
-                    <li key={r.id} className="rounded-lg bg-white px-3 py-2 ring-1 ring-slate-200">
-                      <span className="font-medium">{r.name}</span>
-                      <span className="block text-sm text-slate-500">
-                        {r.nearestMrt} · {r.format}
-                      </span>
+                    <li key={r.id}>
+                      <Link
+                        href={`/routes/${r.id}`}
+                        className="flex items-center justify-between rounded-lg bg-white px-3 py-2 ring-1 ring-slate-200 hover:ring-slate-400"
+                      >
+                        <span>
+                          <span className="font-medium">{r.name}</span>
+                          <span className="block text-sm text-slate-500">
+                            🚇 {r.nearestMrt} · {SHADE_LABEL[r.shade] ?? r.shade}
+                          </span>
+                        </span>
+                        <span className="text-slate-400" aria-hidden>
+                          ›
+                        </span>
+                      </Link>
                     </li>
                   ))}
                 </ul>
