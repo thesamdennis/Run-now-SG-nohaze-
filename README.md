@@ -12,3 +12,8 @@ area with the cleanest air right now.
 **Stack:** Next.js + Tailwind · Leaflet + OneMap tiles · NEA data via data.gov.sg · hosted on Vercel.
 
 > Readings are regional, and verdicts are general guidance, not medical advice.
+
+## Previewing without live data
+
+Set `NEA_MOCK=clear`, `mixed` or `haze` when running locally (`NEA_MOCK=haze npm run dev`) to see the
+home screen with sample readings instead of calling NEA. Never set this on Vercel.

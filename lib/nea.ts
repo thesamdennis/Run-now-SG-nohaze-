@@ -52,6 +52,25 @@ export function parseConditions(pm25Json: NeaResponse, psiJson: NeaResponse): Co
 }
 
 export async function getConditions(): Promise<Conditions> {
+  const mock = mockConditions();
+  if (mock) return mock;
   const [pm25Json, psiJson] = await Promise.all([getJson("pm25"), getJson("psi")]);
   return parseConditions(pm25Json, psiJson);
+}
+
+// Sample readings for previewing the UI without NEA (set NEA_MOCK=clear|mixed|haze locally).
+const MOCK: Record<string, Record<Region, [number, number]>> = {
+  clear: { north: [12, 45], south: [18, 50], east: [9, 40], west: [22, 55], central: [15, 48] },
+  mixed: { north: [46, 80], south: [41, 70], east: [18, 52], west: [82, 120], central: [38, 75] },
+  haze: { north: [96, 125], south: [166, 157], east: [164, 172], west: [269, 190], central: [229, 178] },
+};
+
+export function mockConditions(): Conditions | null {
+  const scenario = process.env.NEA_MOCK ? MOCK[process.env.NEA_MOCK] : undefined;
+  if (!scenario) return null;
+  return {
+    readings: REGIONS.map((region) => ({ region, pm25: scenario[region][0], psi24: scenario[region][1] })),
+    centres: {},
+    updatedAt: new Date().toISOString(),
+  };
 }

@@ -1,6 +1,86 @@
 @import "tailwindcss";
 
+:root {
+  --px-green: #16a34a;
+  --px-green-dark: #166534;
+  --px-sky: #e0f2fe;
+}
+
 body {
-  background: #f8fafc;
+  background: linear-gradient(180deg, #dcfce7 0%, #f0fdf4 280px, #f8fafc 600px);
   color: #0f172a;
+}
+
+.font-pixel {
+  font-family: "Press Start 2P", ui-monospace, monospace;
+}
+
+/* Blocky "Minecraft" panel: hard edges and a stepped shadow instead of soft corners. */
+.px-panel {
+  background: #fff;
+  border: 3px solid #14532d;
+  box-shadow: 4px 4px 0 #14532d;
+}
+.px-badge {
+  background: #fff;
+  border: 2px solid #14532d;
+  box-shadow: 2px 2px 0 rgba(20, 83, 45, 0.6);
+}
+.px-light {
+  display: inline-block;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25), 0 0 6px 1px currentColor;
+  animation: px-glow 1.6s ease-in-out infinite;
+}
+
+.px-bounce { animation: px-bounce 1.8s ease-in-out infinite; }
+.px-run { animation: px-run 0.5s steps(2) infinite; }
+.px-wag { transform-origin: 80% 40%; animation: px-wag 1.2s ease-in-out infinite; }
+.px-haze { animation: px-drift 9s ease-in-out infinite; }
+.px-wave { animation: px-twinkle 3s steps(2) infinite; }
+.px-kid-haze {
+  background: radial-gradient(circle, rgba(214, 199, 161, 0.85) 0%, rgba(231, 220, 192, 0) 70%);
+}
+
+@keyframes px-bounce {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -6px; }
+}
+@keyframes px-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+@keyframes px-run {
+  0% { translate: 0 0; }
+  100% { translate: 0 -4%; }
+}
+@keyframes px-wag {
+  0%, 100% { rotate: 0deg; }
+  25% { rotate: -3deg; }
+  75% { rotate: 3deg; }
+}
+@keyframes px-drift {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 3px -1.5px; }
+}
+@keyframes px-twinkle {
+  0% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .px-bounce, .px-run, .px-wag, .px-haze, .px-wave, .px-light { animation: none; }
+}
+
+/* Little arrow under a map badge pointing at its region. */
+.px-pointer {
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 8px;
+  height: 8px;
+  translate: -50% 0;
+  rotate: 45deg;
+  background: #fff;
+  border-right: 2px solid #14532d;
+  border-bottom: 2px solid #14532d;
 }
